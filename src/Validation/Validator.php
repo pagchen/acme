@@ -14,7 +14,8 @@ class Validator
         $errors = [];
 
         foreach ($validation_data as $name => $value) {
-            if (isset($_REQUEST[$name])) {
+
+          
                 $rules = explode('|', $value);
 
                 foreach ($rules as $rule) {
@@ -41,13 +42,11 @@ class Validator
                   break;
 
                 default:
-                  // do nothing
+                  $errors = 'No value found';
                   break;
               }
                 }
-            } else {
-                $errors = 'No value found';
-            }
+
         }
 
         return $errors;
