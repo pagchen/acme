@@ -14,14 +14,12 @@ class Validator
         $errors = [];
 
         foreach ($validation_data as $name => $value) {
+            $rules = explode('|', $value);
 
-          
-                $rules = explode('|', $value);
+            foreach ($rules as $rule) {
+                $exploded = explode(':', $rule);
 
-                foreach ($rules as $rule) {
-                    $exploded = explode(':', $rule);
-
-                    switch ($exploded[0]) {
+                switch ($exploded[0]) {
                 case 'min':
                   $min = $exploded[1];
                   if (Valid::stringType()->length($min)->Validate($_REQUEST[$name]) == false) {
@@ -45,8 +43,7 @@ class Validator
                   $errors = 'No value found';
                   break;
               }
-                }
-
+            }
         }
 
         return $errors;
