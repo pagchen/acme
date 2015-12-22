@@ -7,9 +7,9 @@ class CreatePagesTable extends AbstractMigration
     public function up()
     {
       $table = $this->table('pages');
-      $table->addColumn('browsertitle', 'string')
+      $table->addColumn('browser_title', 'string')
         ->addColumn('page_content', 'text')
-        ->addColumn('created_at', 'datetime', ['null' => true])
+        ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
         ->addColumn('updated_at', 'datetime', ['null' => true])
         ->save();
     }
