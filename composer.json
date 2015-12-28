@@ -13,7 +13,8 @@
     "duncan3dc/blade": "2.2.*",
     "robmorgan/phinx": "^0.4.4",
     "symfony/var-dumper": "^3.0",
-    "cocur/slugify": "^1.4"
+    "cocur/slugify": "^1.4",
+    "swiftmailer/swiftmailer": "^5.4"
   },
   "autoload": {
     "psr-4": {

@@ -9,6 +9,11 @@ $router->map('POST', '/login', 'Acme\Controllers\AuthenticationController@postSh
 $router->map('GET', '/logout', 'Acme\Controllers\AuthenticationController@getLogout', 'logout');
 $router->map('GET', '/testuser', 'Acme\Controllers\AuthenticationController@getTestUser', 'testuser');
 
+$router->map("GET", '/testemail', function(){
+
+
+});
+
 // page routes
 $router->map('GET', '/', 'Acme\Controllers\PageController@getShowHomePage', 'home');
 $router->map('GET', '/page-not-found', 'Acme\Controllers\PageController@getShow404', '404');
