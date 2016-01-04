@@ -29,21 +29,23 @@
     @yield('content')
 
   </div>
-  <div class="row  footer-background">
-    <div class="col-md-3">
-      <div class="padding-left-8px">
-        <h4>Contact US</h4>
-        123 Main St.
-        <br> UnionVille, PA
-        <br> +1 555-555-1234
+  <footer class="footer">
+      <div class="row  footer-background">
+        <div class="col-md-3">
+          <div class="padding-left-8px">
+            <h4>Contact US</h4>
+            123 Main St.
+            <br> UnionVille, PA
+            <br> +1 555-555-1234
+          </div>
+        </div>
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-3">
+          <img src="/assets/map-small.png" class="pull-right" >
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-    </div>
-    <div class="col-md-3">
-      <img src="/assets/map-small.png" class="pull-right" >
-    </div>
-  </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

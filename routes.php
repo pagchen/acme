@@ -2,17 +2,20 @@
 // register routes
 $router->map('GET', '/register', 'Acme\Controllers\RegisterController@getShowRegisterPage', 'register');
 $router->map('POST', '/register', 'Acme\Controllers\RegisterController@postShowRegisterPage', 'register_post');
+$router->map('GET', '/verify-account', 'Acme\Controllers\RegisterController@getVerifyAccount', 'verify_account');
 
+// testimonial routes
+$router->map('GET', '/testimonials', 'Acme\Controllers\TestimonialController@getShowTestimonials', 'testimonials');
+
+// logged In user routes
+if (Acme\Auth\LoggedIn::user()) {
+    $router->map('GET', '/add-testimonial', 'Acme\Controllers\TestimonialController@getShowAdd', 'testimonial');
+    $router->map('POST', '/add-testimonial', 'Acme\Controllers\TestimonialController@postShowAdd', 'testimonial_post');
+}
 // login routes
 $router->map('GET', '/login', 'Acme\Controllers\AuthenticationController@getShowLoginPage', 'login');
 $router->map('POST', '/login', 'Acme\Controllers\AuthenticationController@postShowLoginPage', 'login_post');
 $router->map('GET', '/logout', 'Acme\Controllers\AuthenticationController@getLogout', 'logout');
-$router->map('GET', '/testuser', 'Acme\Controllers\AuthenticationController@getTestUser', 'testuser');
-
-$router->map("GET", '/testemail', function(){
-
-
-});
 
 // page routes
 $router->map('GET', '/', 'Acme\Controllers\PageController@getShowHomePage', 'home');
