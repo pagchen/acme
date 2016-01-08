@@ -8,7 +8,7 @@ $router->map('GET', '/verify-account', 'Acme\controllers\RegisterController@getV
 $router->map('GET', '/testimonials', 'Acme\controllers\TestimonialController@getShowTestimonials', 'testimonials');
 
 // logged In user routes
-if (Acme\Auth\LoggedIn::user()) {
+if (Acme\auth\LoggedIn::user()) {
     $router->map('GET', '/add-testimonial', 'Acme\controllers\TestimonialController@getShowAdd', 'testimonial');
     $router->map('POST', '/add-testimonial', 'Acme\controllers\TestimonialController@postShowAdd', 'testimonial_post');
 }

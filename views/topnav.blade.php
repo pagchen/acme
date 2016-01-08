@@ -15,12 +15,12 @@
         <li><a href="/about-acme">About</a></li>
         <li><a href="/register">Register</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
-        @if(Acme\Auth\LoggedIn::user())
+        @if(Acme\auth\LoggedIn::user())
             <li><a href="/add-testimonial">Add a testimonial</a></li>
         @endif
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        @if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2))
+        @if ((Acme\auth\LoggedIn::user()) && (Acme\auth\LoggedIn::user()->access_level == 2))
             <li class=dropdown>
                 <a id=drop1 href=# class=dropdown-toggle data-toggle=dropdown role=button aria-haspopup=true aria-expanded=false>
                     Admin
@@ -29,7 +29,7 @@
                 <ul class=dropdown-menu aria-labelledby=drop1>
                     <li><a class="menu-item" href="#" onclick="makePageEditable(this)" >Edit Page</a></li>
                     <li role=separator class=divider></li>
-                    <li><a href=#>Separated link</a></li>
+                    <li><a href='/admin/page/add'>Add a Page</a></li>
                 </ul>
             </li>
             <li>
@@ -37,7 +37,7 @@
                     <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Logout
                 </a>
             </li>
-        @elseif (Acme\Auth\LoggedIn::user())
+        @elseif (Acme\auth\LoggedIn::user())
             <li>
                 <a href="/logout">
                     <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Logout

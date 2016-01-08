@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Auth;
+namespace Acme\auth;
 
 use Acme\models\User;
 

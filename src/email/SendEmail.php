@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Email;
+namespace Acme\email;
 
 /**
  *

@@ -23,8 +23,11 @@
             <br> @include('errormessage')
         </div>
 
-        @yield('content')
-
+        <div class="row">
+            <div class="col-md-12 push-down">
+                @yield('content')
+            </div>
+        </div>
     </div>
     <footer class="footer">
         <div class="row  footer-background">
@@ -48,10 +51,12 @@
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    @if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2))
+    @if ((Acme\auth\LoggedIn::user()) && (Acme\auth\LoggedIn::user()->access_level == 2))
         <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.4.5/ckeditor.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-    @endif @yield('bottomjs')
+    @endif
+    @yield('bottomjs')
+    @include('admin-js')
 </body>
 
 </html>
