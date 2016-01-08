@@ -6,17 +6,17 @@ class SeedUsersTable extends AbstractMigration
 {
   public function up()
   {
-    $password_hash = password_hash('very_secret', PASSWORD_DEFAULT);
+    $password_hash = password_hash('asdf', PASSWORD_DEFAULT);
 
     $this->execute("
-        insert into users (first_name, last_name, email, password)
+        insert into users (first_name, last_name, email, password, active, access_level)
         values
-        ('Trevor', 'Sawler', 'me@here.ca', '$password_hash')
+        ('Pagchen', 'Kelsang', 'me@here.ca', '$password_hash', '1', '2')
     ");
   }
 
   public function down()
   {
-    
+
   }
 }

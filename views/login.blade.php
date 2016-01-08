@@ -4,6 +4,7 @@
   Acme: login
 @stop
 
+
 @section('content')
 <div class="row">
   <div class="col-md-2">
@@ -16,7 +17,8 @@
     <hr>
 
     <form name="loginform" id="loginform" action="/login" method="POST" class="form-horizontal">
-      <div class="form-group">
+        <input type="hidden" name="_token" value="{!! htmlspecialchars($signer->getSignature()) !!}">
+        <div class="form-group">
         <label for="username" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
           <input type="email" class="form-control required email" id="email" name="email" placeholder="user@example.com">

@@ -21,23 +21,32 @@ class Validator
 
                 switch ($exploded[0]) {
                 case 'min':
-                  $min = $exploded[1];
-                  if (Valid::stringType()->length($min)->Validate($_REQUEST[$name]) == false) {
+                    $min = $exploded[1];
+                    if (Valid::stringType()->length($min)->Validate($_REQUEST[$name]) == false) {
                       $errors[] = $name.' must be at least '.$min.' characters long!';
-                  }
-                  break;
+                    }
+                     break;
 
                 case 'email':
-                  if (Valid::email()->Validate($_REQUEST[$name]) ==  false) {
-                      $errors[] = $name.' must be a valid email address!';
-                  }
-                  break;
+                    if (Valid::email()->Validate($_REQUEST[$name]) ==  false) {
+                        $errors[] = $name.' must be a valid email address!';
+                    }
+                    break;
 
                 case 'equalTo':
-                  if (Valid::equals($_REQUEST[$name])->Validate($_REQUEST[$exploded[1]]) == false) {
-                      $errors[] = 'Value does not match the verification value';
-                  }
-                  break;
+                    if (Valid::equals($_REQUEST[$name])->Validate($_REQUEST[$exploded[1]]) == false) {
+                          $errors[] = 'Value does not match the verification value';
+                      }
+                      break;
+                 case 'unique':
+                    $model = "Acme\\models\\" . $exploded[1];
+                    $table = new $model;
+                    $results = $table->where($name, '=', $_REQUEST[$name])->get();
+                    foreach ($results as $result)
+                    {
+                        $errors[] = $_REQUEST[$name] . " already exists in this system!"; 
+                    }
+                    break;
 
                 default:
                   $errors = 'No value found';
