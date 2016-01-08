@@ -16,7 +16,7 @@
             &nbsp;&nbsp;&nbsp;
             @if ($page_id == 0)
             <br><br>
-            <input type="text" name="browser_title" placeholder="Enter Browser Title">
+            <input type="text" class="form-control required" name="browser_title" placeholder="Enter Browser Title">
             @endif
         </article>
         <input type="hidden" name="thedata" id="thedata">

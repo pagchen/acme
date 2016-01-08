@@ -10,7 +10,7 @@ $capsule->addConnection([
   'username'    => getenv('DB_USER'),
   'password'    => getenv('DB_PASS'),
   'charset'     => 'utf8',
-  'collection'  => 'utf8_unicode_ci',
+  'collation'  => 'utf8_unicode_ci',
   'prefix'      => '',
 ]);
 

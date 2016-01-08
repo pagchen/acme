@@ -42,7 +42,7 @@ class AdminController extends BaseController
 
         if ($okay) {
             $page->save();
-            echo "Ok";
+            echo "OK";
         } else {
             echo "Browser Title already in use";
         }
