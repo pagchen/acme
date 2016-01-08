@@ -56,7 +56,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
     @endif
     @yield('bottomjs')
-    @include('admin-js')
+    @include('admin/admin-js')
 </body>
 
 </html>
