@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Controllers;
+namespace Acme\controllers;
 
 use Acme\Models\User;
 use Acme\Validation\Validator;
