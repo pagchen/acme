@@ -5,7 +5,7 @@
     "email": "pagchen@me.com"
   }],
   "require": {
-    "filp/whoops": "^1.1",
+    "filp/whoops": "dev-master",
     "vlucas/phpdotenv": "~1.1",
     "illuminate/database": "5.1.*",
     "altorouter/altorouter": "1.1.0",
@@ -13,7 +13,10 @@
     "duncan3dc/blade": "2.2.*",
     "robmorgan/phinx": "^0.4.4",
     "symfony/var-dumper": "^3.0",
-    "cocur/slugify": "^1.4"
+    "cocur/slugify": "^1.4",
+    "swiftmailer/swiftmailer": "^5.4",
+    "phpunit/phpunit": "^4.8",
+    "kunststube/csrfp": "^0.1.0"
   },
   "autoload": {
     "psr-4": {

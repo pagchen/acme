@@ -1,9 +1,29 @@
 @extends('base')
 
 @section('browsertitle')
-  {{ $browser_title }}
+    {{ $browser_title }}
 @stop
 
 @section('content')
- {!! $page_content !!}
+    @if ((Acme\auth\LoggedIn::user()) && (Acme\auth\LoggedIn::user()->access_level == 2))
+    <form method="post" action="/admin/page/edit" id="editpage" name="editpage">
+        <article id="editablecontent" class='editablecontent' itemprop="description" style='width: 100%; line-height: 2em;'>
+            {!! $page_content !!}
+        </article>
+        <article class="admin-hidden">
+            <a class="btn btn-primary" href="#!" onclick="saveEditedPage()">Save</a>
+            <a class="btn btn-info" href="#!" onclick="turnOffEditing()">Cancel</a>
+            &nbsp;&nbsp;&nbsp;
+            @if ($page_id == 0)
+            <br><br>
+            <input type="text" class="form-control required" name="browser_title" placeholder="Enter Browser Title">
+            @endif
+        </article>
+        <input type="hidden" name="thedata" id="thedata">
+        <input type="hidden" name="old" id="old">
+        <input type="hidden" name="page_id" value="{!! $page_id !!}">
+    </form>
+    @else
+        {!! $page_content !!}
+    @endif
 @stop

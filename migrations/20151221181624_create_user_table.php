@@ -13,6 +13,9 @@ class CreateUserTable extends AbstractMigration
         ->addColumn('password', 'string')
         ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
         ->addColumn('updated_at', 'datetime', ['null' => true])
+        ->addColumn('active', 'integer', ['default' => '0'])
+        ->addColumn('access_level', 'integer', ['default' => '1'])
+        ->addIndex(['email'], ['unique' => true])
         ->save();
     }
 
