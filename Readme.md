@@ -92,7 +92,21 @@ Create the public folder: `mkdir public`
 
 Restart the server `sudo service nginx restart` to have the change taken into effect
 
+## Forcing request to go to public/index.php
 
+`sudo vi /etc/nginx/sites-available/default` then change :
 
+```
+location / {
+	try_files $uri $uri/ =404;
+}
+```
 
+to 
+
+```
+location / {
+	try_files $uri $uri/ /index.php?$query_string;
+}
+```
 
