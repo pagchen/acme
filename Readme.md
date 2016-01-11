@@ -110,3 +110,20 @@ location / {
 }
 ```
 
+and restart server `sudo service nginx restart`
+
+## Adding to GIT
+
+In main folder, create file `.gitignore` (see in repo for content)
+
+from vm terminal: `git init`
+
+`git config --global user.email "pag****@de********.com"`
+
+`git config --global user.name "Pag**** K."`
+
+`git add .` and then `git commit -m "Initial commit"`
+
+### Adding to Github
+
+Go to github.com and add a new repo. Choose the **...or push an existing repository from the command line** and enter the commands in the terminal
