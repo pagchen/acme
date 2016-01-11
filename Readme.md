@@ -61,3 +61,38 @@ From host terminal:
 You are all set with a running vm !
 
 **(note: you may need to close other running vm for this one to run smoothly)**
+
+## Installing Composer on the server.
+
+### From host terminal:
+
+`cd /path/to/project/acme`
+
+`vagrant ssh`
+
+### From inside the vm machine terminal:
+
+`cd /vagrant`
+
+`curl -sS https://getcomposer.org/installer | php` and then `sudo mv composer.phar /usr/local/bin/composer`
+
+`composer init` ... And Answer the questions :
+
+```
+Author = email address
+Would you like to define your dependencies (require) ? NO
+Would you like to define your dev dependencies (require-dev) ? NO
+```
+
+## Changing the public directory
+
+Create the public folder: `mkdir public`
+
+`sudo vi /etc/nginx/sites-available/default`  (only on nginx servers) then change the `root /vagrant` to `root /vagrant/public` and save (ESC : wq)
+
+Restart the server `sudo service nginx restart` to have the change taken into effect
+
+
+
+
+
