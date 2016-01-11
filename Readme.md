@@ -127,3 +127,18 @@ from vm terminal: `git init`
 ### Adding to Github
 
 Go to github.com and add a new repo. Choose the **...or push an existing repository from the command line** and enter the commands in the terminal
+
+## DB Migration with Phinx
+
+From host terminal in project folder: `composer require robmorgan/phinx 0.4.4`
+
+Then: `php vendor/bin/phinx init`  and then go change the phinx.yaml file to put your db creditentials.
+
+Check the doc, but here is how to create a migration: `php vendor/bin/phinx create CreateUserTable`
+
+This will create the /migrations/CreateUserTable migration that you need to edit. See the repo migrations files.
+
+When ready to run the migration: `php vendor/bin/phinx migrate -e development`  the -e development is optional on dev server
+
+If ever want to undo the migrations: `php vendor/bin/phinx rollback -e development`
+
